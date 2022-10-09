@@ -1,0 +1,33 @@
+[package]
+name = "jsonb_diesel"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.65"
+
+diesel = { version = "2.0.1", features = [
+    "chrono",
+    "postgres",
+    "r2d2",
+    "uuid",
+    "serde_json",
+] }
+
+# derive macro for mapping rust structs to jsonb
+# diesel_as_jsonb = "1.0.0"
+
+# Maintained version of dotenv
+dotenvy = "0.15.5"
+
+# Unique identifiers
+uuid = { version = "1.2.0", features = ["serde", "v4"] }
+
+# Serialization
+serde = { version = "1.0.145", features = ["derive"] }
+serde_json = "1.0.85"
+
+# Date and time library
+chrono = { version = "0.4.22", features = ["serde"] }
