@@ -30,6 +30,7 @@ pub struct Question {
 fn main() {
     let conn = &mut Db::new().connect().expect("Failed to get connection.");
 
+    // This is Result<{unknown}, {unknown}>, how can I get the types inferred?
     let result = form_question::dsl::form_question
         .inner_join(question::table)
         .load::<(FormQuestion, Question)>(conn);
